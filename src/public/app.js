@@ -14,7 +14,7 @@ const awayRemove = document.getElementById('awayRemove');
 
 async function fetchScoreboard() {
   try {
-    const response = await fetch('http://localhost:3000/api/score/buscar');
+    const response = await fetch('http://localhost:3000/api/score/scoreboard');
 
     console.log('status:', response.status);
     console.log('content-type:', response.headers.get('content-type'));
@@ -116,7 +116,7 @@ async function updatePoint(team, action) {
   } else if (team === 'away') {
     if (action === 'add') {
       addPoint(team);
-       console.log("adicionando pontos para o time away")
+      console.log("adicionando pontos para o time away")
     }
     if (action === 'remove') {
       removePoint(team);

@@ -4,8 +4,7 @@ class ScoreBoard {
     awayTeam = 'time Visitante',
     homeScore = 0,
     awayScore = 0
-  ) 
-  {
+  ) {
     this.homeTeam = homeTeam;
     this.homeScore = homeScore;
     this.awayTeam = awayTeam;
@@ -19,6 +18,14 @@ class ScoreBoard {
       this.awayScore += 1;
     }
   }
+  updateTeams(homeTeam, awayTeam) {
+    if (homeTeam) {
+      this.homeTeam = homeTeam;
+    }
+    if (awayTeam) {
+      this.awayTeam = awayTeam
+    }
+  }
 
   removePoint(team) {
     if (team === 'home') {
@@ -27,5 +34,8 @@ class ScoreBoard {
       this.awayScore = Math.max(0, this.awayScore - 1);
     }
   }
+
 }
-module.exports = ScoreBoard
+module.exports = {
+  ScoreBoard
+};
